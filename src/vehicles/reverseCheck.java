@@ -43,24 +43,5 @@ public class reverseCheck {
             vector[1] /= mag;
         }
     }
-    
-    
-
-        
-        
-        public static void detectReversal3(LinkedList<vehicleTimeStamps> path) {
-        	int win_size = 5;
-        	int len = path.size();
-        	List<vehicleTimeStamps> prevList=new ArrayList<>();
-        	List<vehicleTimeStamps> nextList=new ArrayList<>();
-        	for(int i=win_size;i<=len-win_size;i++) {
-        		prevList  = new ArrayList<>(path.subList(i - win_size, i));
-                Collections.reverse(prevList);  // Reversing to simulate "return path"
-        		nextList = new ArrayList<>(path.subList(i,win_size+i));
-        		
-        		
-        	}
-        }
-        
 
 }

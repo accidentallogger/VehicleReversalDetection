@@ -11,15 +11,15 @@ public class mainApp {
 		dataRetrieval dataretrieval = new dataRetrieval();
 		//dataretrieval.retrieveData();
 		//dataRetrieval.readCSVFileandSave("new_data.csv","vehicleStamps3");
-		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps");
+		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps3");
 		System.out.println(path);
-		reverseCheck2.detectReversal2(path);
+		reverseCheck3.detectReversal3(path);
 		
 		/*for(int i=1;i<path.size();i++) {
 			double dist = speedCalc.PointToPointDistance(path.get(i-1).coordinates.latitude,path.get(i-1).coordinates.longitude
 					,path.get(i).coordinates.latitude,path.get(i).coordinates.longitude);
 			System.out.println("Point "+Integer.toString(i)+" and point "+Integer.toString(i+1)+": "+dist);
-//		}*/
+	}*/
 	}
 }
 

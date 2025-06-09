@@ -18,11 +18,8 @@ public class reverseCheck2 {
             if (len < 2 * WINDOW_SIZE) return false;
 
             for (int i = WINDOW_SIZE; i <= len - WINDOW_SIZE; i++) {
-                // Create reversed previous list (W1)
                 List<vehicleTimeStamps> prevlist = new ArrayList<>(path.subList(i - WINDOW_SIZE, i));
-                Collections.reverse(prevlist);  // Reversing to simulate "return path"
-
-                // Next list (W2)
+                Collections.reverse(prevlist); 
                 List<vehicleTimeStamps> nextlist = path.subList(i, i + WINDOW_SIZE);
 
                 boolean allClose = true;

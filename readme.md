@@ -8,10 +8,13 @@ different types of reversals possible: U-Turn, Reverse
 	* b. When a vehicle maneuvers into the reverse lane, then there is a possibility of the individual coordinates to fall closer to the older points.
 	* c. Possible usage of the time and coordinates to find the corresponding distance and speed between two points.(Failed due to lack of proper time data)
 
+* reverseCheck class which implements detectReversal which is based on a.
+* reverseCheck3 class which implements detectReversal3 which is based on b.
+
 ## Test Data used:
 I have 3 MySql Tables named as VehicleStamps, VehicleStamps2, VehicleStamps3, each with the below given table structure:
 ![VehicleStamps3](https://github.com/user-attachments/assets/61521489-c8ec-443f-8fea-ccdb821e2219)
-<<<<<<< HEAD
+
 
 Here is the representation of the required data on google map: 
 
@@ -92,7 +95,7 @@ Check whether the next few GPS points closely match the reverse of the previous 
 
 ## Brief Analysis
 
-The second solution worked better for datasets with lesser amount of mislabeled data leading to lesser number of false pocitives while on the other hand the first solution worked better even when there were mislabeled points at the edges of the data clusters.
+The second solution worked better for data sets with lesser number of mislabeled data leading to lesser number of false positives while on the other hand the first solution worked better even when there were mislabeled points at the edges of the data clusters.
 There were some false positives in both the techniques
 
 ---------------------------------------------------------------------------------

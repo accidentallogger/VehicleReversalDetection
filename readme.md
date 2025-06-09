@@ -8,8 +8,8 @@ different types of reversals possible: U-Turn, Reverse
 	* b. When a vehicle maneuvers into the reverse lane, then there is a possibility of the individual coordinates to fall closer to the older points.
 	* c. Possible usage of the time and coordinates to find the corresponding distance and speed between two points.(Failed due to lack of proper time data)
 
-* reverseCheck class which implements detectReversal which is based on a.
-* reverseCheck3 class which implements detectReversal3 which is based on b.
+* **reverseCheck class implements detectReversal which is based on a.**
+* **reverseCheck3 class implements detectReversal3 which is based on b.**
 
 ## Test Data used:
 I have 3 MySql Tables named as VehicleStamps, VehicleStamps2, VehicleStamps3, each with the below given table structure:

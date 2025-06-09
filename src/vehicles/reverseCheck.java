@@ -3,7 +3,7 @@ package vehicles;
 import java.util.*;
 
 public class reverseCheck {
-
+//with vector conversion and angle measurement
     public static void detectReversal(LinkedList<vehicleTimeStamps> path) {
         if (path.size() < 3) {
             System.out.println("Not enough data points.");
@@ -45,7 +45,7 @@ public class reverseCheck {
     
     
     
-
+// checks for points that are close to each other using a sliding window approach.
 
         private static final int WINDOW_SIZE = 5;
         private static final double DISTANCE_THRESHOLD = 1.0; // meters
@@ -78,12 +78,13 @@ public class reverseCheck {
                 }
 
                 if (allClose) {
-                    System.out.println("🔁 Reversal detected near point: " + nextlist.get(0).point);
+                    System.out.println("Reversal detected near point: " + nextlist.get(0).point);
                     return true;
                 }
             }
 
             return false;
         }
+        
 
 }

@@ -11,9 +11,9 @@ public class mainApp {
 		dataRetrieval dataretrieval = new dataRetrieval();
 		//dataretrieval.retrieveData();
 		//dataRetrieval.readCSVFileandSave("new_data.csv","vehicleStamps3");
-		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps3");
+		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps");
 		System.out.println(path);
-		reverseCheck.detectReversal(path);
+		reverseCheck2.detectReversal2(path);
 		
 		/*for(int i=1;i<path.size();i++) {
 			double dist = speedCalc.PointToPointDistance(path.get(i-1).coordinates.latitude,path.get(i-1).coordinates.longitude

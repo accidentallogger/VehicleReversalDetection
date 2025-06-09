@@ -4,6 +4,7 @@ import java.util.*;
 
 public class reverseCheck {
 //with vector conversion and angle measurement
+	//works on some datasets
     public static void detectReversal(LinkedList<vehicleTimeStamps> path) {
         if (path.size() < 3) {
             System.out.println("Not enough data points.");
@@ -44,46 +45,21 @@ public class reverseCheck {
     }
     
     
-    
-// checks for points that are close to each other using a sliding window approach.
 
-        private static final int WINDOW_SIZE = 5;
-        private static final double DISTANCE_THRESHOLD = 1.0; // meters
-
-        public boolean detectReversal2(LinkedList<vehicleTimeStamps> path) {
-            int len = path.size();
-            if (len < 2 * WINDOW_SIZE) return false;
-
-            for (int i = WINDOW_SIZE; i <= len - WINDOW_SIZE; i++) {
-                // Create reversed previous list (W1)
-                List<vehicleTimeStamps> prevlist = new ArrayList<>(path.subList(i - WINDOW_SIZE, i));
-                Collections.reverse(prevlist);  // Reversing to simulate "return path"
-
-                // Next list (W2)
-                List<vehicleTimeStamps> nextlist = path.subList(i, i + WINDOW_SIZE);
-
-                boolean allClose = true;
-
-                for (int j = 0; j < WINDOW_SIZE; j++) {
-                    double lat1 = prevlist.get(j).coordinates.latitude;
-                    double lon1 = prevlist.get(j).coordinates.longitude;
-                    double lat2 = nextlist.get(j).coordinates.latitude;
-                    double lon2 = nextlist.get(j).coordinates.longitude;
-
-                    double dist = speedCalc.PointToPointDistance(lat1, lon1, lat2, lon2);
-                    if (dist > DISTANCE_THRESHOLD) {
-                        allClose = false;
-                        break;
-                    }
-                }
-
-                if (allClose) {
-                    System.out.println("Reversal detected near point: " + nextlist.get(0).point);
-                    return true;
-                }
-            }
-
-            return false;
+        
+        
+        public static void detectReversal3(LinkedList<vehicleTimeStamps> path) {
+        	int win_size = 5;
+        	int len = path.size();
+        	List<vehicleTimeStamps> prevList=new ArrayList<>();
+        	List<vehicleTimeStamps> nextList=new ArrayList<>();
+        	for(int i=win_size;i<=len-win_size;i++) {
+        		prevList  = new ArrayList<>(path.subList(i - win_size, i));
+                Collections.reverse(prevList);  // Reversing to simulate "return path"
+        		nextList = new ArrayList<>(path.subList(i,win_size+i));
+        		
+        		
+        	}
         }
         
 

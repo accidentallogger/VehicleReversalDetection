@@ -25,7 +25,7 @@ public class reverseCheck {
             double dot = v1[0] * v2[0] + v1[1] * v2[1];
 
             if (dot < -0.7) {  
-                System.out.println("Reversal detected at point ID: " + p2.id);
+                System.out.println("Reversal detected at " + p2.point);
             }
         }
     }

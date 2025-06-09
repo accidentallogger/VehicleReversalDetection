@@ -11,7 +11,9 @@ public class mainApp {
 		dataRetrieval dataretrieval = new dataRetrieval();
 		//dataretrieval.retrieveData();
 		//dataRetrieval.readCSVFileandSave("new_data.csv","vehicleStamps3");
-		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps3");
+		
+		
+		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps2");
 		System.out.println(path);
 		reverseCheck3.detectReversal3(path);
 		

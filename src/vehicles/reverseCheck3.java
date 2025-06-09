@@ -9,6 +9,7 @@ public class reverseCheck3 {
 	public static void detectReversal3(LinkedList<vehicleTimeStamps> path) {
     	int win_size = 5;
     	int len = path.size();
+    	int thres=3;
     	List<vehicleTimeStamps> prevList=new ArrayList<>();
     	List<vehicleTimeStamps> nextList=new ArrayList<>();
     	for(int i=win_size;i<=len-win_size-1;i++) {
@@ -21,7 +22,7 @@ public class reverseCheck3 {
     					,lon1=nextList.get(j).coordinates.longitude,lon2=nextList.get(j).coordinates.longitude;
     			double distance = speedCalc.PointToPointDistance(lat1,lon1,lat2,lon2);
     			System.out.println("between "+prevList.get(j).point+" and "+nextList.get(j).point+" : "+distance);
-    			if(distance<5) {
+    			if(distance<thres) {
     				System.out.println();
     				 System.out.println("Reversal at "+nextList.get(j).point);
     				 break;

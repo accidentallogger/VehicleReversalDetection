@@ -10,3 +10,7 @@ Thought Process:
 	* b. When a vehicle maneuvers into the reverse lane, then there is a possibility of the individual coordinates to fall closer to the older points, so we can make use of a sliding window approach to find optimal/nearly coinciding points.
 	* c. Possible usage of the time and coordinates to find the corresponding distance and speed between two points.
 	
+	
+	
+
+	

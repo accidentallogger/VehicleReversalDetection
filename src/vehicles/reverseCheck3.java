@@ -21,7 +21,7 @@ public class reverseCheck3 {
     			double lat1=prevList.get(j).coordinates.latitude,lat2=nextList.get(j).coordinates.latitude
     					,lon1=nextList.get(j).coordinates.longitude,lon2=nextList.get(j).coordinates.longitude;
     			double distance = speedCalc.PointToPointDistance(lat1,lon1,lat2,lon2);
-    			System.out.println("between "+prevList.get(j).point+" and "+nextList.get(j).point+" : "+distance);
+    			//System.out.println("between "+prevList.get(j).point+" and "+nextList.get(j).point+" : "+distance);
     			if(distance<thres) {
     				System.out.println();
     				 System.out.println("Reversal at "+nextList.get(j).point);

@@ -15,7 +15,7 @@ public class mainApp {
 		
 		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps2");
 		System.out.println(path);
-		reverseCheck3.detectReversal3(path);
+		reverseCheck.detectReversal(path);
 		
 		/*for(int i=1;i<path.size();i++) {
 			double dist = speedCalc.PointToPointDistance(path.get(i-1).coordinates.latitude,path.get(i-1).coordinates.longitude

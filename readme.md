@@ -106,3 +106,11 @@ Future TODOS:
 2. Speed can be another factor on which we can make our decision.
 
 ---------------------------------------------------------------------------------
+
+Update 11/6/25
+
+Tried to implement an angular filter for the sliding window approach, led to a large number of false detections.  
+
+Need more comprehensive data for working out a proper logic.
+
+---------------------------------------------------------------------------------

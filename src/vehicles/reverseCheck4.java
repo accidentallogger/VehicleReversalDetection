@@ -8,8 +8,8 @@ import java.util.List;
 public class reverseCheck4 {
 
     static final double AngularThres = -0.7; // Adjusted threshold for reversal detection
-    static final int win_size = 3;
-    static final int thres = 5; // Distance threshold (ensure units match speedCalc)
+    static final int win_size = 5;
+    static final int thres = 1; // Distance threshold (ensure units match speedCalc)
 
     public static void normalize(double[] v) {
         double mag = Math.sqrt(v[0] * v[0] + v[1] * v[1]);

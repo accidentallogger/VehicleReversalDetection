@@ -1,5 +1,8 @@
 package vehicles;
 import vehicles.*;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.time.LocalTime;
@@ -8,14 +11,17 @@ import java.util.LinkedList;
 import java.util.List;
 public class mainApp {
 
-	public static void main(String args[]) throws SQLException {
+	public static void main(String args[]) throws SQLException, FileNotFoundException, IOException {
 		dataRetrieval dataretrieval = new dataRetrieval();
+		
+		//KmlParser.parseCoordinates("kmls/vehicleStamps6.kml","Vehicledata/vehicleStamps7.csv");
+		
 		//dataretrieval.retrieveData();
-		//dataRetrieval.readCSVFileandSave("Vehicledata/edge_case_circle.csv","edge_Case_Circle_vehicleStamps5");
+		//dataRetrieval.readCSVFileandSave("Vehicledata/vehicleStamps7.csv","vehicleStamps7");
 		
 		
-		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("edge_Case_Circle_vehicleStamps5");
-		System.out.println(path);
+		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps7");
+		//System.out.println(path);
 		List<UTurnEvent> basicUTurns =reverseCheck5.basicReversal(path);
 		 System.out.println("\nBasic U-turn detection results:");
 		for(UTurnEvent b:basicUTurns) {
@@ -32,6 +38,8 @@ public class mainApp {
 					,path.get(i).coordinates.latitude,path.get(i).coordinates.longitude);
 			System.out.println("Point "+Integer.toString(i)+" and point "+Integer.toString(i+1)+": "+dist);
 	}*/
+		
+		
 	}
 }
 

@@ -76,3 +76,12 @@ Tried to implement an angular filter for the sliding window approach, led to a l
 Need more comprehensive data for working out a proper logic.
 
 ---------------------------------------------------------------------------------
+
+Update 16/6/25
+
+Generated specific edge cases that can be encountered such as operlaps in vehicle coordinates, circle, erratic change of time stamps and coordinates.
+
+Developed class reverseCheck5, which 
+
+
+---------------------------------------------------------------------------------

@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import vehicles.vehicleTimeStamps;
 public class dataRetrieval {
-void retrieveData() throws SQLException{
+void retrieveData(String tablename) throws SQLException{
 		
 		String url = "jdbc:mysql://localhost:3306/twproj";
 		String user = "tanmay";
@@ -23,7 +23,7 @@ void retrieveData() throws SQLException{
 			e.printStackTrace();
 		}
 try(Connection con=DriverManager.getConnection(url,user,pass);Statement st = con.createStatement();){
-	ResultSet rs = st.executeQuery("Select * from vehicleStamps");
+	ResultSet rs = st.executeQuery("Select * from +"+tablename);
 	System.out.println(" id | Points | Time | Latitude | Longitude | Direction ");
 
 	while(rs.next()) {

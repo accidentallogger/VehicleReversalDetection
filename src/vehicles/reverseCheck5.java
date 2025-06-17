@@ -181,7 +181,7 @@ class UTurnEvent {
     public double angleChange;
     public LocalTime startTime;
     public LocalTime endTime;
-    public String turnDirection;
+    //public String turnDirection;
     
     public UTurnEvent(vehicleTimeStamps start, vehicleTimeStamps turn, vehicleTimeStamps end,
                      double angleChange, LocalTime startTime, LocalTime endTime) {
@@ -191,13 +191,13 @@ class UTurnEvent {
         this.angleChange = angleChange;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.turnDirection = angleChange > 0 ? "LEFT" : "RIGHT";
+      //  this.turnDirection = angleChange > 0 ? "LEFT" : "RIGHT";
     }
     
     @Override
     public String toString() {
-        return String.format("U-Turn detected: %s turn of %.2f degrees from %s to %s at point (%.6f, %.6f)",
-                           turnDirection, Math.abs(angleChange), startTime, endTime,
+        return String.format("U-Turn detected: angle of %.2f degrees from %s to %s at point (%.6f, %.6f)",
+                            Math.abs(angleChange), startTime, endTime,
                            turnPoint.coordinates.latitude, turnPoint.coordinates.longitude);
     }
 }

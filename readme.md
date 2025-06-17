@@ -77,11 +77,86 @@ Need more comprehensive data for working out a proper logic.
 
 ---------------------------------------------------------------------------------
 
-Update 16/6/25
+Update 16/6/25 + tests on 17/6/25
 
-Generated specific edge cases that can be encountered such as operlaps in vehicle coordinates, circle, erratic change of time stamps and coordinates.
+Generated specific edge cases that can be encountered such as overlaps in vehicle coordinates, circle, erratic change of time stamps and coordinates.
 
-Developed class reverseCheck5, which 
+Developed class reverseCheck5, which implements 2 methods, basic and advanced.
+
+**1. Basic Approach – `basicReversal()`**
+
+#### ➤ How it works:
+
+* Takes **3 consecutive GPS points** (`p1`, `p2`, `p3`).
+* Calculates:
+
+  * **Bearing1**: Direction from `p1` to `p2`
+  * **Bearing2**: Direction from `p2` to `p3`
+  * **Angle Change** = `bearing2 - bearing1` (normalized to \[-180, 180])
+  * **Distance1**: Between `p1` and `p2`
+  * **Distance2**: Between `p2` and `p3`
+* If:
+
+  * `|Angle Change| ≥ 150°` (a sharp turn)
+  * `Distance1 ≥ 50m` and `Distance2 ≥ 50m`
+    → Then it marks it as a **U-turn**.
+
+####  Example:
+
+| Point | Latitude | Longitude | Time     |
+
+| ----- | -------- | --------- | -------- |
+
+| P1    | 22.7196  | 75.8577   | 10:00 AM |
+
+| P2    | 22.7200  | 75.8580   | 10:01 AM |
+
+| P3    | 22.7195  | 75.8574   | 10:02 AM |
+
+* From `P1 → P2` the bearing is \~45°
+* From `P2 → P3` the bearing is \~225°
+* Angle change = 180° → This is a U-turn
+* If both distances are ≥ 50 meters →  U-turn is confirmed
+
+---
+
+### **2. Advanced Approach – `detectUTurnsAdvanced()`**
+
+#### ➤ How it works:
+
+* Takes a **window of 5 consecutive points**.
+* Calculates **bearings** between each pair:
+
+  * P1→P2, P2→P3, P3→P4, P4→P5
+* Calculates **total angle change** across these bearings.
+* If the **total angle change ≥ 150°**, and the motion is curved back:
+  → It's a **U-turn**.
+
+#### Why better?
+
+* This method **smoothes** the path, handles **zig-zags**, and filters out **false positives** better than the basic method.
+
+#### Example:
+
+| Point | Latitude | Longitude |
+
+|-------|----------|----------------|
+
+| P1    | 22.7196  | 75.8577   |
+
+| P2    | 22.7200  | 75.8580   |
+
+| P3    | 22.7203  | 75.8583   |
+
+| P4    | 22.7200  | 75.8580   |
+
+| P5    | 22.7195  | 75.8575   |
+
+* The path goes forward and then loops back.
+* Bearings gradually change: 45°, 60°, 120°, 225°
+* Total angle change ≈ \~180°
+  →  U-turn detected, even though no sharp single jump like in basic method.
+
 
 
 ---------------------------------------------------------------------------------

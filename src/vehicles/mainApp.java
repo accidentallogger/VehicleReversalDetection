@@ -14,13 +14,13 @@ public class mainApp {
 	public static void main(String args[]) throws SQLException, FileNotFoundException, IOException {
 		dataRetrieval dataretrieval = new dataRetrieval();
 		
-		//KmlParser.parseCoordinates("kmls/vehicleStamps6.kml","Vehicledata/vehicleStamps7.csv");
+		//KmlParser.parseCoordinates("kmls/edge_case2.kml","Vehicledata/edge_case2.csv");
 		
 		//dataretrieval.retrieveData();
-		//dataRetrieval.readCSVFileandSave("Vehicledata/vehicleStamps7.csv","vehicleStamps7");
+		//dataRetrieval.readCSVFileandSave("Vehicledata/edge_case2.csv","edge_case2");
 		
 		
-		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("vehicleStamps7");
+		LinkedList<vehicleTimeStamps> path =dataretrieval.generatePath("edge_case2");
 		//System.out.println(path);
 		List<UTurnEvent> basicUTurns =reverseCheck5.basicReversal(path);
 		 System.out.println("\nBasic U-turn detection results:");

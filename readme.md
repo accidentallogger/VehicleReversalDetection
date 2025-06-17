@@ -15,6 +15,11 @@ different types of reversals possible: U-Turn, Reverse
 I have 3 MySql Tables named as VehicleStamps, VehicleStamps2, VehicleStamps3, each with the below given table structure:
 ![VehicleStamps3](https://github.com/user-attachments/assets/61521489-c8ec-443f-8fea-ccdb821e2219)
 
+sql query for the same
+`create table TABLE_NAME(id int, Points varchar(200),Time time, Latitude double(10,8),Longitude double(10,8), Direction varchar(50), check(Direction='Reverse' or
+Direction='Forward'),primary key(id));`
+
+
 
 Here is the representation of the required data on google map: 
 
